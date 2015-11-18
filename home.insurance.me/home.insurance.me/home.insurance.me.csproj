@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CCPRestSDK">
+      <HintPath>packages\CCPRestSDK.dll</HintPath>
+    </Reference>
     <Reference Include="I.Utility">
       <HintPath>..\packages\I.Utility.dll</HintPath>
     </Reference>
@@ -423,6 +426,7 @@
     <Compile Include="Data\SYS_LogInfo.cs">
       <DependentUpon>DataSource.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\Util.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

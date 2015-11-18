@@ -11,11 +11,11 @@
                         <div class="f-indexLogin-tips">请输入正确手机号</div>
                         <label class="user">
                             <%--<input type="text" placeholder="请输入用户名">--%>
-                            <asp:TextBox ID="txtMobile" runat="server" placeholder="请输入用户名"></asp:TextBox>
+                            <asp:TextBox ID="txtMobile" runat="server" placeholder="请输入用户名" data-flag="phone"></asp:TextBox>
 
                         </label>
                         <label class="password">
-                            <asp:TextBox ID="txtPassword" runat="server" placeholder="请输入用密码"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" placeholder="请输入用密码" data-flag="password"></asp:TextBox>
                             <%--<input type="password" placeholder="请输入用密码">--%></label>
                     </div>
                     <div class="f-indexLogin-other">
@@ -25,7 +25,7 @@
                         &nbsp;
                     <a href="http://local.testxdf.cn/insurance.me/FormUI/01Account/FindPassword">忘记密码</a>
                     </div>
-                    <asp:Button ID="btnLogin" runat="server" Text="立即登录" CssClass="f-indexLogin-submit" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" runat="server" Text="立即登录" CssClass="f-indexLogin-submit" OnClick="btnLogin_Click" OnClientClick="return checkPage();"/>
                     <%--<input type="submit" value="" class="f-indexLogin-submit">--%>
                 </div>
             </div>
@@ -84,4 +84,32 @@
         </div>
     </div>
 
+
+    <script type="text/javascript">
+        var domain = "http://local.testxdf.cn/insurance.me";
+        var url = "/FormUI/Shared/Interface.ashx";
+
+        //check page
+        function checkPage () {
+            var mobile = $("input[data-flag='phone']").val().trim();
+            var password = $("input[data-flag='password']").val().trim();
+
+            if (mobile.length != 11 || password.length <= 6) {
+                $("#mobile-tips").text("请检查手机号码！");
+                $("#mobile-tips").fadeIn();
+
+                $("#passowrd-tips").text("请检查密码！");
+                $("#passowrd-tips").fadeIn();
+
+                $("#name-tips").text("请检查姓名！");
+                $("#name-tips").fadeIn();
+
+                return false;
+            }
+
+            return true;
+        }
+
+
+    </script>
 </asp:Content>

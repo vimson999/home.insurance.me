@@ -101,10 +101,10 @@
             var parameters = "?action=sendSMS&mobile=" + mobile ;
 
             $.getJSON(domain + url + parameters, function (json) {
-                //if (json > 0) {
+                if (json > 0) {
                     $("#sms-tips").fadeIn();
                     $("#sms-tips").text("验证码已发送，请输入验证码！");
-                //}
+                }
             });
         });
 
