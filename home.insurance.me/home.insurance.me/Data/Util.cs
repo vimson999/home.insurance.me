@@ -64,6 +64,22 @@ namespace home.insurance.cn.Data
             return ret;
         }
 
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         string SMS_RegisteTemplateID
         {
             get

@@ -72,11 +72,11 @@ namespace home.insurance.cn.FormUI.Shared
 
                     try
                     {
-                        new Util().SendRegisteSMS(mobile, new string[] { _sms, "5" });
+                        //new Util().SendRegisteSMS(mobile, new string[] { _sms, "5" });
 
                         content = "1";
                         var key = "SendSMS-Mobile-" + mobile;
-                        context.Cache.Add(key, _sms, null, DateTime.Now.AddMinutes(5), new TimeSpan(0), CacheItemPriority.Normal, null);
+                        context.Cache.Insert(key, _sms, null, DateTime.Now.AddMinutes(5), new TimeSpan(0), CacheItemPriority.Normal, null);
                     }
                     catch (Exception error)
                     {

@@ -11,7 +11,7 @@
                         <div class="f-indexLogin-tips">请输入正确手机号</div>
                         <label class="user">
                             <%--<input type="text" placeholder="请输入用户名">--%>
-                            <asp:TextBox ID="txtMobile" runat="server" placeholder="请输入用户名" data-flag="phone"></asp:TextBox>
+                            <asp:TextBox ID="txtMobile" runat="server" placeholder="请输入用户名" data-flag="phone" MaxLength="11"></asp:TextBox>
 
                         </label>
                         <label class="password">

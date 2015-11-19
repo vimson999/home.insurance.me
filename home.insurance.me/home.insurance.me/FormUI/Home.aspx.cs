@@ -52,7 +52,7 @@ namespace home.insurance.cn.FormUI
             if (count > 0)
             {
                 UtilX3.SetCookie("hongli", "hongli", 15);
-                Response.Redirect("http://local.testxdf.cn/insurance.me/FormUI/04Order/List");
+                Response.Redirect("../FormUI/04Order/List");
             }
         }
     }

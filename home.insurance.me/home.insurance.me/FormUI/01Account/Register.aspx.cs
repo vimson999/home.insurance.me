@@ -55,6 +55,8 @@ namespace home.insurance.cn.FormUI._01Account
             service.AddUserInfo(userInfo);
 
             UtilX3.SetCookie("hongli", "hongli", 15);
+
+            Response.Redirect("../FormUI/04Order/List");
         }
     }
 }
