@@ -13,7 +13,7 @@ namespace home.insurance.cn.Data
     public class Util
     {
 
-        public void SendSMS(string templateId,string mobile)
+        public void SendSMS(string templateId,string mobile,string[] content)
         {
             var ret = string.Empty;
             var api = new CCPRestSDK.CCPRestSDK();
@@ -26,8 +26,8 @@ namespace home.insurance.cn.Data
             {
                 if (isInit)
                 {
-                    Dictionary<string, object> retData = api.SendTemplateSMS(mobile, templateId, null);
-                    ret = getDictionaryData(retData);
+                    Dictionary<string, object> retData = api.SendTemplateSMS(mobile, templateId, content);
+                    ret = GetDictionaryData(retData);
                 }
                 else
                 {
@@ -40,12 +40,12 @@ namespace home.insurance.cn.Data
             }
         }
 
-        public void SendRegisteSMS(string mobile)
+        public void SendRegisteSMS(string mobile,string[] content)
         {
-            this.SendSMS(this.SMS_RegisteTemplateID, mobile);
+            this.SendSMS(this.SMS_RegisteTemplateID, mobile, content);
         }
 
-        string getDictionaryData(Dictionary<string, object> data)
+        string GetDictionaryData(Dictionary<string, object> data)
         {
             string ret = null;
             foreach (KeyValuePair<string, object> item in data)
@@ -53,7 +53,7 @@ namespace home.insurance.cn.Data
                 if (item.Value != null && item.Value.GetType() == typeof(Dictionary<string, object>))
                 {
                     ret += item.Key.ToString() + "={";
-                    ret += getDictionaryData((Dictionary<string, object>)item.Value);
+                    ret += GetDictionaryData((Dictionary<string, object>)item.Value);
                     ret += "};";
                 }
                 else

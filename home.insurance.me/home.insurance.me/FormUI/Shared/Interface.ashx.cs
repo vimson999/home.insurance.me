@@ -60,7 +60,7 @@ namespace home.insurance.cn.FormUI.Shared
                     content = result ? "1" : "0";
                     logInfo = "interface checkSMS --- mobile : {0} ,sms ： {1}, Time : {2}, result : {3}";
 
-                    LogHelper.Info(string.Format(content, mobile, sms, DateTime.Now, content));
+                    LogHelper.Info(string.Format(logInfo, mobile, sms, DateTime.Now, content));
 
                     break;
                 case "sendSMS":
@@ -70,14 +70,23 @@ namespace home.insurance.cn.FormUI.Shared
                     var _num = random.Next(1000, 9999);
                     var _sms = _num.ToString();
 
-                    //todo send
+                    try
+                    {
+                        new Util().SendRegisteSMS(mobile, new string[] { _sms, "5" });
 
-                    var key = "SendSMS-Mobile-" + mobile;
-                    context.Cache.Add(key, _sms, null, DateTime.Now.AddMinutes(5), new TimeSpan(0), CacheItemPriority.Normal, null);
+                        content = "1";
+                        var key = "SendSMS-Mobile-" + mobile;
+                        context.Cache.Add(key, _sms, null, DateTime.Now.AddMinutes(5), new TimeSpan(0), CacheItemPriority.Normal, null);
+                    }
+                    catch (Exception error)
+                    {
+                        content = "0";
+                        LogHelper.AppError(error.Message);
+                    }
 
                     logInfo = "interface sendSMS --- mobile : {0} ,sms ： {1}, Time : {2}, result : {3}";
 
-                    LogHelper.Info(string.Format(content, mobile, _sms, DateTime.Now, 0));
+                    LogHelper.Info(string.Format(logInfo, mobile, _sms, DateTime.Now, 0));
 
                     break;
                 default:
