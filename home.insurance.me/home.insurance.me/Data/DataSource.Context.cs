@@ -25,9 +25,12 @@ namespace home.insurance.cn.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Order_ItemInfo> Order_ItemInfo { get; set; }
         public virtual DbSet<SYS_LogInfo> SYS_LogInfo { get; set; }
         public virtual DbSet<BaseInfo_UserInfo> BaseInfo_UserInfo { get; set; }
         public virtual DbSet<Order_BaseInfo> Order_BaseInfo { get; set; }
+        public virtual DbSet<Order_Beneficiary> Order_Beneficiary { get; set; }
+        public virtual DbSet<Order_InsuredPerson> Order_InsuredPerson { get; set; }
+        public virtual DbSet<Order_ItemInfo> Order_ItemInfo { get; set; }
+        public virtual DbSet<Order_PolicyHolder> Order_PolicyHolder { get; set; }
     }
 }

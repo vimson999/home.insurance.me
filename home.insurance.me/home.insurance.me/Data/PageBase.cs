@@ -15,16 +15,27 @@ namespace home.insurance.cn.Data
     {
 
 
-        void CurrentUser()
+        BaseInfo_UserInfo GetCurrentUser()
         {
             var cookie = UtilX3.GetCookie(ConfigurationManager.AppSettings["cookieName"]);
 
             if (cookie.IsNull())
                 Response.Redirect("~/FormUI/Home");
 
+            var service = new Repository();
+            var userInfo = new BaseInfo_UserInfo();
 
+            userInfo = service.GetUserInfoByID(cookie.ParseTo<int>());
 
+            return userInfo;
+        }
 
+        public BaseInfo_UserInfo CurrentUser
+        {
+            get
+            {
+                return this.GetCurrentUser();
+            }
         }
     }
 }

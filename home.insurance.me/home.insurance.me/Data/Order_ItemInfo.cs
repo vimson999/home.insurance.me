@@ -14,46 +14,50 @@ namespace home.insurance.cn.Data
     
     public partial class Order_ItemInfo
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Order_ItemInfo()
+        {
+            this.Order_Beneficiary = new HashSet<Order_Beneficiary>();
+        }
+    
         public int ID { get; set; }
         public Nullable<int> OrderID { get; set; }
         public Nullable<byte> Channel { get; set; }
-        public Nullable<int> ProductID { get; set; }
+        public string ProductCode { get; set; }
         public string ProductName { get; set; }
-        public string ProductUrl { get; set; }
-        public string ProductPicUrl { get; set; }
-        public string ProductCompany { get; set; }
-        public Nullable<decimal> StandardPice { get; set; }
-        public Nullable<int> BuyNumber { get; set; }
-        public Nullable<decimal> AmountPayable { get; set; }
-        public Nullable<decimal> Discount { get; set; }
-        public Nullable<decimal> PaidAmount { get; set; }
-        public Nullable<System.DateTime> PayTime { get; set; }
-        public Nullable<byte> PayType { get; set; }
-        public string Memo { get; set; }
-        public Nullable<byte> Status { get; set; }
-        public Nullable<int> CreateMemberID { get; set; }
-        public string CreateMobile { get; set; }
-        public Nullable<System.DateTime> CreateTime { get; set; }
-        public Nullable<System.DateTime> EffectiveBeginDate { get; set; }
-        public Nullable<System.DateTime> EffectiveEndDate { get; set; }
         public string ProductType { get; set; }
         public string ProductScope { get; set; }
         public string ProductTerm { get; set; }
         public string ProductContent { get; set; }
         public string ProductTip { get; set; }
-        public Nullable<decimal> ProductStandardPice { get; set; }
-        public string Beneficiary { get; set; }
-        public string DeliveryType { get; set; }
-        public Nullable<int> DayNum { get; set; }
-        public string ProductCode { get; set; }
         public Nullable<System.DateTime> ProductStartDate { get; set; }
         public Nullable<System.DateTime> ProductEndDate { get; set; }
         public string ProductJourney { get; set; }
+        public string ProductUrl { get; set; }
+        public string ProductPicUrl { get; set; }
+        public string ProductCompany { get; set; }
+        public Nullable<decimal> ProductStandardPice { get; set; }
         public string ProductProposalPlan { get; set; }
         public Nullable<byte> ProductYearFlag { get; set; }
         public string ProductSecurityProjects { get; set; }
+        public string Beneficiary { get; set; }
+        public string DeliveryType { get; set; }
+        public Nullable<int> DayNum { get; set; }
+        public Nullable<int> BuyNumber { get; set; }
+        public Nullable<decimal> AmountPayable { get; set; }
+        public Nullable<decimal> Discount { get; set; }
+        public Nullable<decimal> PaidAmount { get; set; }
+        public Nullable<byte> PayType { get; set; }
+        public Nullable<System.DateTime> PayTime { get; set; }
+        public string Memo { get; set; }
+        public Nullable<byte> Status { get; set; }
+        public Nullable<int> CreateMemberID { get; set; }
+        public string CreateMobile { get; set; }
+        public Nullable<System.DateTime> CreateTime { get; set; }
     
         public virtual BaseInfo_UserInfo BaseInfo_UserInfo { get; set; }
         public virtual Order_BaseInfo Order_BaseInfo { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Beneficiary> Order_Beneficiary { get; set; }
     }
 }

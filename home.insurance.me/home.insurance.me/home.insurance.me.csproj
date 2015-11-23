@@ -419,7 +419,16 @@
     <Compile Include="Data\Order_BaseInfo.cs">
       <DependentUpon>DataSource.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\Order_Beneficiary.cs">
+      <DependentUpon>DataSource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Order_InsuredPerson.cs">
+      <DependentUpon>DataSource.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\Order_ItemInfo.cs">
+      <DependentUpon>DataSource.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Order_PolicyHolder.cs">
       <DependentUpon>DataSource.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\PageBase.cs">

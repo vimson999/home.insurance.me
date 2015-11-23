@@ -116,12 +116,36 @@ namespace home.insurance.cn.Data
         }
 
 
+        public BaseInfo_UserInfo GetUserInfoByID(int id)
+        {
+            var userInfo = new BaseInfo_UserInfo();
+            if (id <= 0)
+                return userInfo;
 
+            try
+            {
+                using (var context = new EntityMember())
+                {
+                    userInfo = (from x in context.BaseInfo_UserInfo
+                                   where
+                                        x.ID == id
+                                   select x).FirstOrDefault();
+                }
+
+                this.AddLog(JsonConvert.SerializeObject(userInfo), "根据ID查询用户", 18, id);
+            }
+            catch (Exception error)
+            {
+                LogHelper.AppError(error.Message);
+            }
+
+            return userInfo;
+        }
 
 
         public void AddUserInfo(BaseInfo_UserInfo userInfo)
         {
-            if (userInfo != null)
+            if (userInfo == null)
                 return;
 
             try
