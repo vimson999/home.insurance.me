@@ -220,5 +220,11 @@ namespace home.insurance.cn.Data
 
             return returnValue;
         }
+
+
+        public void PostInsurance()
+        {
+
+        }
     }
 }

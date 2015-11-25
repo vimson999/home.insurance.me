@@ -89,6 +89,15 @@ namespace home.insurance.cn.FormUI.Shared
                     LogHelper.Info(string.Format(logInfo, mobile, _sms, DateTime.Now, 0));
 
                     break;
+                case "createOrder":
+                    mobile = context.Request["mobile"];
+
+
+                    logInfo = "interface createOrder --- mobile : {0} ,sms ： {1}, Time : {2}, result : {3}";
+
+                    //LogHelper.Info(string.Format(logInfo, mobile, _sms, DateTime.Now, 0));
+
+                    break;
                 default:
                     break;
             }
