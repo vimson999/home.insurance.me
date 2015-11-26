@@ -7,7 +7,7 @@
         <div class="j-product-wrap">
             <ul class="j-product clearfix">
                 <div class="j-product-image">
-                    <img src="./public/images/product/pic01.jpg">
+                    <img src="http://local.testxdf.cn/insurance.me/Scripts/public/images/product/pic01.jpg">
                 </div>
                 <div class="j-product-details">
                     <h4>E保交通工具综合保险（贴心保）</h4>
@@ -16,7 +16,7 @@
                     <span class="detail02">保障期限：1年</span>
                     <span class="detail03">限购份数：3份</span>
                     <div class="buy">
-                        <a href="#">立即投保</a>
+                        <a href="http://local.testxdf.cn/insurance.me/FormUI/04Order/edit.aspx?productid=1">立即投保</a>
                         <p>价格：<i>¥19.90</i></p>
                     </div>
                 </div>
@@ -24,11 +24,11 @@
         </div>
         <div class="wrap">
             <ul class="f-tab clearfix js-tab">
-                <li class="current"><a href="javascript:;">保障利益</a></li>
-                <li><a href="javascript:;">温馨提示</a></li>
-                <li><a href="javascript:;">保险条款</a></li>
-                <li><a href="javascript:;">投保须知</a></li>
-                <li><a href="javascript:;">理赔指南</a></li>
+                <li class="current" data-flag="1"><a href="javascript:;">保障利益</a></li>
+                <li data-flag="1"><a href="javascript:;">温馨提示</a></li>
+                <li data-flag="1"><a href="javascript:;">保险条款</a></li>
+                <li data-flag="1"><a href="javascript:;">投保须知</a></li>
+                <li data-flag="1"><a href="javascript:;">理赔指南</a></li>
             </ul>
             <div class="f-tabContent">
                 <div class="B-ui-table-ext02">
@@ -162,7 +162,7 @@
         <div class="j-product-wrap">
             <ul class="j-product clearfix">
                 <div class="j-product-image">
-                    <img src="./public/images/product/pic02.jpg">
+                    <img src="http://local.testxdf.cn/insurance.me/Scripts/public/images/product/pic02.jpg">
                 </div>
                 <div class="j-product-details">
                     <h4>E保意外伤害综合保险B计划</h4>
@@ -171,7 +171,7 @@
                     <span class="detail02">保障期限：1年</span>
                     <span class="detail03">限购份数：3份</span>
                     <div class="buy">
-                        <a href="#">立即投保</a>
+                        <a href="http://local.testxdf.cn/insurance.me/FormUI/04Order/edit.aspx?productid=2">立即投保</a>
                         <p>价格：<i>¥66.00</i></p>
                     </div>
                 </div>
@@ -179,11 +179,11 @@
         </div>
         <div class="wrap">
             <ul class="f-tab clearfix js-tab">
-                <li class="current"><a href="javascript:;">保障利益</a></li>
-                <li><a href="javascript:;">温馨提示</a></li>
-                <li><a href="javascript:;">保险条款</a></li>
-                <li><a href="javascript:;">投保须知</a></li>
-                <li><a href="javascript:;">理赔指南</a></li>
+                <li class="current" data-flag="2"><a href="javascript:;">保障利益</a></li>
+                <li data-flag="2"><a href="javascript:;">温馨提示</a></li>
+                <li data-flag="2"><a href="javascript:;">保险条款</a></li>
+                <li data-flag="2"><a href="javascript:;">投保须知</a></li>
+                <li data-flag="2"><a href="javascript:;">理赔指南</a></l>
             </ul>
             <div class="f-tabContent">
                 <div class="B-ui-table-ext02">
@@ -331,7 +331,7 @@
         <div class="j-product-wrap">
             <ul class="j-product clearfix">
                 <div class="j-product-image">
-                    <img src="./public/images/product/pic03.jpg">
+                    <img src="http://local.testxdf.cn/insurance.me/Scripts/public/images/product/pic03.jpg">
                 </div>
                 <div class="j-product-details">
                     <h4>E保意外伤害综合保险C计划</h4>
@@ -340,7 +340,7 @@
                     <span class="detail02">保障期限：1年</span>
                     <span class="detail03">限购份数：3份</span>
                     <div class="buy">
-                        <a href="#">立即投保</a>
+                        <a href="http://local.testxdf.cn/insurance.me/FormUI/04Order/edit.aspx?productid=3">立即投保</a>
                         <p>价格：<i>¥99.00</i></p>
                     </div>
                 </div>
@@ -348,11 +348,11 @@
         </div>
         <div class="wrap">
             <ul class="f-tab clearfix js-tab">
-                <li class="current"><a href="javascript:;">保障利益</a></li>
-                <li><a href="javascript:;">温馨提示</a></li>
-                <li><a href="javascript:;">保险条款</a></li>
-                <li><a href="javascript:;">投保须知</a></li>
-                <li><a href="javascript:;">理赔指南</a></li>
+                <li class="current" data-flag="3"><a href="javascript:;">保障利益</a></li>
+                <li data-flag="3"><a href="javascript:;">温馨提示</a></li>
+                <li data-flag="3"><a href="javascript:;">保险条款</a></li>
+                <li data-flag="3"><a href="javascript:;">投保须知</a></li>
+                <li data-flag="3"><a href="javascript:;">理赔指南</a></li>
             </ul>
             <div class="f-tabContent">
                 <div class="B-ui-table-ext02">
@@ -532,7 +532,17 @@
 
 
         $(document).ready(function () {
+            var id = getQueryString("id");
             
+            if (id == 1) {
+                $("#product1").show();
+            }
+            else if (id == 2) {
+                $("#product2").show();
+            }
+            else {
+                $("#product3").show();
+            }
         });
 
 

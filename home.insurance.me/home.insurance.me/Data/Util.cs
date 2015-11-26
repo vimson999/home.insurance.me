@@ -111,98 +111,141 @@ namespace home.insurance.cn.Data
                 return ConfigurationManager.AppSettings["SMS_AppID"];
             }
         }
+
+        public string ApiUrl
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["ApiUrl"];
+            }
+        }
+
+
+        public string ApiKey
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["ApiKey"];
+            }
+        }
+
+
+        public string ApiChannelId
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["ApiChannelId"];
+            }
+        }
     }
 
     public class EBaoInsuranceInfo
     {
         /// <summary>
         /// 渠道订单号
+        /// *
         /// </summary>
         public int DomainOrderId { get; set; }
 
         /// <summary>
         /// 保单类型
+        /// *
         /// 1:个人保单： 4 人及以下4：团体保单： 4 人以上必须使用此类型；
         /// </summary>
         public string PolicyType { get; set; }
 
         /// <summary>
         /// 产品代码
+        /// *
         /// </summary>
         public string ProductId { get; set; }
 
         /// <summary>
         /// 方案代码
+        /// *
         /// </summary>
         public string PlanId { get; set; }
 
         /// <summary>
         /// 签单日期
+        /// *
         /// yyyy-MM-dd H:mm:ss
         /// </summary>
         public DateTime OperateDate { get; set; }
 
         /// <summary>
         /// 起保日期
+        /// *
         /// yyyy-MM-dd
         /// </summary>
         public DateTime StartDate { get; set; }
 
         /// <summary>
         /// 起保时分
+        /// *
         /// HH:mm
         /// </summary>
         public DateTime StartTime { get; set; }
 
         /// <summary>
         /// 终保日期
+        /// *
         /// yyyy-MM-dd
         /// </summary>
         public DateTime EndDate { get; set; }
 
         /// <summary>
         /// 终保时分
+        /// *
         /// HH:mm
         /// </summary>
         public DateTime EndTime { get; set; }
 
         /// <summary>
         /// 投保人数
+        /// *
         /// </summary>
         public int ProposalNum { get; set; }
 
         /// <summary>
         /// 投保人数
+        /// *
         /// </summary>
         public int RationCount { get; set; }
 
         /// <summary>
         /// 每人每份保额
+        /// *
         /// </summary>
         public double PersonalAmount { get; set; }
 
         /// <summary>
         /// 每人每份保费
+        /// *
         /// </summary>
         public double PersonalPremium { get; set; }
 
         /// <summary>
         /// 总保额
+        /// *
         /// </summary>
         public double SumAmount { get; set; }
 
         /// <summary>
         /// 总保费
+        /// *
         /// </summary>
         public double SumPremium { get; set; }
 
         /// <summary>
         /// 投保人姓名
+        /// *
         /// </summary>
         public string PolicyholderName { get; set; }
 
         /// <summary>
         /// 投保人证件类型
+        /// *
         ///     01: 身份证 
         ///     02：户口簿 
         ///     03：护照 
@@ -216,11 +259,13 @@ namespace home.insurance.cn.Data
 
         /// <summary>
         /// 投保人证件号码
+        /// *
         /// </summary>
         public string IdentifyNumber { get; set; }
 
         /// <summary>
         /// 投保人性别
+        /// *
         /// 1：男； 2：女
         /// </summary>
         public int Sex { get; set; }
@@ -238,6 +283,7 @@ namespace home.insurance.cn.Data
 
         /// <summary>
         /// 投保人手机号
+        /// *
         /// </summary>
         public string Mobile { get; set; }
 
@@ -277,11 +323,13 @@ namespace home.insurance.cn.Data
     {
         /// <summary>
         /// 被保险人姓名
+        /// *
         /// </summary>
         public string InsuredName { get; set; }
 
         /// <summary>
         /// 证件类型
+        /// *
         /// 01:身份证 02：户口簿 03：护照 04：军官证 05:驾驶执照 06：返乡证 07：港澳身份证 99：其它
         /// </summary>
         public string IdentifyType { get; set; }
@@ -308,6 +356,7 @@ namespace home.insurance.cn.Data
 
         /// <summary>
         /// 手机号
+        /// *
         /// </summary>
         public string Mobile { get; set; }
 
@@ -386,6 +435,7 @@ namespace home.insurance.cn.Data
     {
         /// <summary>
         /// 受益人姓名
+        /// *
         /// </summary>
         public string BeneficiaryName { get; set; }
 
@@ -412,6 +462,7 @@ namespace home.insurance.cn.Data
 
         /// <summary>
         /// 手机号
+        /// *
         /// </summary>
         public string Mobile { get; set; }
 
@@ -438,6 +489,7 @@ namespace home.insurance.cn.Data
 
         /// <summary>
         /// 如果一个被保险人有多个受益人，则多个受益人的受益份额之和应该等于 1
+        /// *
         /// </summary>
         public double BenefitRate { get; set; }
     }

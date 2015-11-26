@@ -222,9 +222,25 @@ namespace home.insurance.cn.Data
         }
 
 
-        public void PostInsurance()
+        public void PostInsurance( EBaoInsuranceInfo info )
         {
+            var apiUrl = new Util().ApiUrl;
 
+            //https://ip:port/interface?METHOD={0}&amp;SIGNTYPE={1}&amp;INPUT={2}&amp;SIGN={3}
+
+            var signType = "1";
+            var key = new Util().ApiKey;
+            var method = "insuredHAInsurance";
+            var input = JsonConvert.SerializeObject(info);
+            var sign = "";
+
+            apiUrl = string.Format(apiUrl, method, signType, input, sign);
+
+            X3.WebUtilX3.DoPost(apiUrl, null);
         }
+
+
+
+
     }
 }
